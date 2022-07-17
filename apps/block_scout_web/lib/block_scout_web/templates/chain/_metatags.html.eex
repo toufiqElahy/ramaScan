@@ -1,5 +1,5 @@
 <title>
-  <%= gettext("%{subnetwork} %{network} Explorer", subnetwork: LayoutView.subnetwork_title(), network: LayoutView.network_title()) %>
+  Track your Transaction with RAMA Explorer -Rama Scan
 </title>
-<meta name="description" content="<%= gettext "BlockScout provides analytics data, API, and Smart Contract tools for the %{subnetwork}", subnetwork: LayoutView.subnetwork_title() %>">
+<meta name="description" content="We unify your transaction history with Rama Scan, Get  Full Report for all your Rama Coin Here on RamaScan [Explorer]">
 <meta name="keywords" content="BlockScout, blockchain, api, analytics, address, smart contract">
