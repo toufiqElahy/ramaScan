@@ -185,15 +185,15 @@ defmodule BlockScoutWeb.Etherscan do
         "name" => "Example Token",
         "decimals" => "18",
         "symbol" => "ET",
-        "type" => "ERC-20"
+        "type" => "RAMA-20"
       },
       %{
         "balance" => "1",
         "contractAddress" => "0x0000000000000000000000000000000000000001",
-        "name" => "Example ERC-721 Token",
+        "name" => "Example RAMA-721 Token",
         "decimals" => "18",
         "symbol" => "ET7",
-        "type" => "ERC-721"
+        "type" => "RAMA-721"
       }
     ]
   }
@@ -266,7 +266,7 @@ defmodule BlockScoutWeb.Etherscan do
       "name" => "Example Token",
       "symbol" => "ET",
       "totalSupply" => "1000000000",
-      "type" => "ERC-20"
+      "type" => "RAMA-20"
     }
   }
 
@@ -917,8 +917,8 @@ defmodule BlockScoutWeb.Etherscan do
       decimals: @token_decimal_type,
       type: %{
         type: "token type",
-        enum: ~s(["ERC-20", "ERC-721"]),
-        enum_interpretation: %{"ERC-20" => "ERC-20 token standard", "ERC-721" => "ERC-721 token standard"}
+        enum: ~s(["RAMA-20", "RAMA-721"]),
+        enum_interpretation: %{"RAMA-20" => "RAMA-20 token standard", "RAMA-721" => "RAMA-721 token standard"}
       },
       cataloged: %{
         type: "boolean",
@@ -1864,8 +1864,8 @@ defmodule BlockScoutWeb.Etherscan do
   @token_gettoken_action %{
     name: "getToken",
     description:
-      "Get <a href='https://github.com/ethereum/EIPs/issues/20'>ERC-20</a> " <>
-        "or <a href='https://github.com/ethereum/EIPs/issues/721'>ERC-721</a> token by contract address.",
+      "Get <a href='https://github.com/ethereum/EIPs/issues/20'>RAMA-20</a> " <>
+        "or <a href='https://github.com/ethereum/EIPs/issues/721'>RAMA-721</a> token by contract address.",
     required_params: [
       %{
         key: "contractaddress",
@@ -1953,8 +1953,8 @@ defmodule BlockScoutWeb.Etherscan do
   @stats_tokensupply_action %{
     name: "tokensupply",
     description:
-      "Get <a href='https://github.com/ethereum/EIPs/issues/20'>ERC-20</a> or " <>
-        "<a href='https://github.com/ethereum/EIPs/issues/721'>ERC-721</a> " <>
+      "Get <a href='https://github.com/ethereum/EIPs/issues/20'>RAMA-20</a> or " <>
+        "<a href='https://github.com/ethereum/EIPs/issues/721'>RAMA-721</a> " <>
         " token total supply by contract address.",
     required_params: [
       %{

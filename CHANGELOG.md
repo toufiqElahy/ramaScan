@@ -490,7 +490,7 @@
 - [#3125](https://github.com/blockscout/blockscout/pull/3125) - Fix performance of coin balance history chart
 - [#3122](https://github.com/blockscout/blockscout/pull/3122) - Exclude balance percentage calculation for burn address on accounts page
 - [#3121](https://github.com/blockscout/blockscout/pull/3121) - Geth: handle response from eth_getblockbyhash JSON RPC method without totalDifficulty (uncle blocks)
-- [#3119](https://github.com/blockscout/blockscout/pull/3119), [#3120](https://github.com/blockscout/blockscout/pull/3120) - Fix performance of Inventory tab loading for ERC-721 tokens
+- [#3119](https://github.com/blockscout/blockscout/pull/3119), [#3120](https://github.com/blockscout/blockscout/pull/3120) - Fix performance of Inventory tab loading for RAMA-721 tokens
 - [#3114](https://github.com/blockscout/blockscout/pull/3114) - Fix performance of "Blocks validated" page
 - [#3112](https://github.com/blockscout/blockscout/pull/3112) - Fix verification of contracts, compiled with nightly builds of solc compiler
 - [#3112](https://github.com/blockscout/blockscout/pull/3112) - Check compiler version at contract verification
@@ -509,7 +509,7 @@
 - [#3089](https://github.com/blockscout/blockscout/pull/3089) - CoinGecko API coin id environment variable
 - [#3069](https://github.com/blockscout/blockscout/pull/3069) - Make a link to address page on decoded constructor argument of address type
 - [#3067](https://github.com/blockscout/blockscout/pull/3067) - Show proper title of the tile or container for token burnings/mintings instead of "Token Transfer"
-- [#3066](https://github.com/blockscout/blockscout/pull/3066) - ERC-721 token instance page: link to token added
+- [#3066](https://github.com/blockscout/blockscout/pull/3066) - RAMA-721 token instance page: link to token added
 - [#3065](https://github.com/blockscout/blockscout/pull/3065) - Transactions history chart
 
 ### Fixes
@@ -1158,9 +1158,9 @@ Reverting of synchronous block counter, implemented in #1848
 - [#1739](https://github.com/blockscout/blockscout/pull/1739) - highlight decompiled source code
 - [#1696](https://github.com/blockscout/blockscout/pull/1696) - full-text search by tokens
 - [#1742](https://github.com/blockscout/blockscout/pull/1742) - Support RSK
-- [#1777](https://github.com/blockscout/blockscout/pull/1777) - show ERC-20 token transfer info on transaction page
+- [#1777](https://github.com/blockscout/blockscout/pull/1777) - show RAMA-20 token transfer info on transaction page
 - [#1770](https://github.com/blockscout/blockscout/pull/1770) - set a websocket keepalive from config
-- [#1789](https://github.com/blockscout/blockscout/pull/1789) - add ERC-721 info to transaction overview page
+- [#1789](https://github.com/blockscout/blockscout/pull/1789) - add RAMA-721 info to transaction overview page
 - [#1801](https://github.com/blockscout/blockscout/pull/1801) - Staking pools fetching
 
 ### Fixes

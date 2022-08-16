@@ -4114,7 +4114,7 @@ defmodule Explorer.Chain do
     nft_tokens =
       from(
         token in Token,
-        where: token.type == ^"ERC-721",
+        where: token.type == ^"RAMA-721",
         select: token.contract_address_hash
       )
 
@@ -5499,8 +5499,8 @@ defmodule Explorer.Chain do
 
     if token_transfer do
       case token_transfer.token do
-        %Token{type: "ERC-20"} -> :erc20
-        %Token{type: "ERC-721"} -> :erc721
+        %Token{type: "RAMA-20"} -> :erc20
+        %Token{type: "RAMA-721"} -> :erc721
         _ -> nil
       end
     else

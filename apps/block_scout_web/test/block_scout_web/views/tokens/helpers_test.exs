@@ -4,29 +4,29 @@ defmodule BlockScoutWeb.Tokens.HelpersTest do
   alias BlockScoutWeb.Tokens.Helpers
 
   describe "token_transfer_amount/1" do
-    test "returns the symbol -- with ERC-20 token and amount nil" do
-      token = build(:token, type: "ERC-20")
+    test "returns the symbol -- with RAMA-20 token and amount nil" do
+      token = build(:token, type: "RAMA-20")
       token_transfer = build(:token_transfer, token: token, amount: nil)
 
       assert Helpers.token_transfer_amount(token_transfer) == {:ok, "--"}
     end
 
-    test "returns the formatted amount according to token decimals with ERC-20 token" do
-      token = build(:token, type: "ERC-20", decimals: Decimal.new(6))
+    test "returns the formatted amount according to token decimals with RAMA-20 token" do
+      token = build(:token, type: "RAMA-20", decimals: Decimal.new(6))
       token_transfer = build(:token_transfer, token: token, amount: Decimal.new(1_000_000))
 
       assert Helpers.token_transfer_amount(token_transfer) == {:ok, "1"}
     end
 
-    test "returns the formatted amount when the decimals is nil with ERC-20 token" do
-      token = build(:token, type: "ERC-20", decimals: nil)
+    test "returns the formatted amount when the decimals is nil with RAMA-20 token" do
+      token = build(:token, type: "RAMA-20", decimals: nil)
       token_transfer = build(:token_transfer, token: token, amount: Decimal.new(1_000_000))
 
       assert Helpers.token_transfer_amount(token_transfer) == {:ok, "1,000,000"}
     end
 
-    test "returns a string with the token_id with ERC-721 token" do
-      token = build(:token, type: "ERC-721", decimals: nil)
+    test "returns a string with the token_id with RAMA-721 token" do
+      token = build(:token, type: "RAMA-721", decimals: nil)
       token_transfer = build(:token_transfer, token: token, amount: nil, token_id: 1)
 
       assert Helpers.token_transfer_amount(token_transfer) == {:ok, :erc721_instance}

@@ -1,6 +1,6 @@
 defmodule Indexer.Transform.TokenTransfers do
   @moduledoc """
-  Helper functions for transforming data for ERC-20 and ERC-721 token transfers.
+  Helper functions for transforming data for RAMA-20 and RAMA-721 token transfers.
   """
 
   require Logger
@@ -36,7 +36,7 @@ defmodule Indexer.Transform.TokenTransfers do
       acc
   end
 
-  # ERC-20 token transfer
+  # RAMA-20 token transfer
   defp parse_params(%{second_topic: second_topic, third_topic: third_topic, fourth_topic: nil} = log)
        when not is_nil(second_topic) and not is_nil(third_topic) do
     [amount] = decode_data(log.data, [{:uint, 256}])
@@ -50,12 +50,12 @@ defmodule Indexer.Transform.TokenTransfers do
       to_address_hash: truncate_address_hash(log.third_topic),
       token_contract_address_hash: log.address_hash,
       transaction_hash: log.transaction_hash,
-      token_type: "ERC-20"
+      token_type: "RAMA-20"
     }
 
     token = %{
       contract_address_hash: log.address_hash,
-      type: "ERC-20"
+      type: "RAMA-20"
     }
 
     update_token(log.address_hash, token_transfer)
@@ -63,7 +63,7 @@ defmodule Indexer.Transform.TokenTransfers do
     {token, token_transfer}
   end
 
-  # ERC-721 token transfer with topics as addresses
+  # RAMA-721 token transfer with topics as addresses
   defp parse_params(%{second_topic: second_topic, third_topic: third_topic, fourth_topic: fourth_topic} = log)
        when not is_nil(second_topic) and not is_nil(third_topic) and not is_nil(fourth_topic) do
     [token_id] = decode_data(fourth_topic, [{:uint, 256}])
@@ -77,12 +77,12 @@ defmodule Indexer.Transform.TokenTransfers do
       token_contract_address_hash: log.address_hash,
       token_id: token_id || 0,
       transaction_hash: log.transaction_hash,
-      token_type: "ERC-721"
+      token_type: "RAMA-721"
     }
 
     token = %{
       contract_address_hash: log.address_hash,
-      type: "ERC-721"
+      type: "RAMA-721"
     }
 
     update_token(log.address_hash, token_transfer)
@@ -90,7 +90,7 @@ defmodule Indexer.Transform.TokenTransfers do
     {token, token_transfer}
   end
 
-  # ERC-721 token transfer with info in data field instead of in log topics
+  # RAMA-721 token transfer with info in data field instead of in log topics
   defp parse_params(%{second_topic: nil, third_topic: nil, fourth_topic: nil, data: data} = log)
        when not is_nil(data) do
     [from_address_hash, to_address_hash, token_id] = decode_data(data, [:address, :address, {:uint, 256}])
@@ -104,12 +104,12 @@ defmodule Indexer.Transform.TokenTransfers do
       token_contract_address_hash: log.address_hash,
       token_id: token_id,
       transaction_hash: log.transaction_hash,
-      token_type: "ERC-721"
+      token_type: "RAMA-721"
     }
 
     token = %{
       contract_address_hash: log.address_hash,
-      type: "ERC-721"
+      type: "RAMA-721"
     }
 
     update_token(log.address_hash, token_transfer)

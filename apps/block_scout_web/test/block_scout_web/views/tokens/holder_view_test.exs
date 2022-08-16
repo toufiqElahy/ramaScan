@@ -57,15 +57,15 @@ defmodule BlockScoutWeb.Tokens.HolderViewTest do
   end
 
   describe "format_token_balance_value/1" do
-    test "formats according to token decimals when it's a ERC-20" do
-      token = build(:token, type: "ERC-20", decimals: Decimal.new(2))
+    test "formats according to token decimals when it's a RAMA-20" do
+      token = build(:token, type: "RAMA-20", decimals: Decimal.new(2))
       token_balance = build(:token_balance, value: 2_000_000)
 
       assert HolderView.format_token_balance_value(token_balance.value, token) == "20,000"
     end
 
-    test "returns the value when it's ERC-721" do
-      token = build(:token, type: "ERC-721")
+    test "returns the value when it's RAMA-721" do
+      token = build(:token, type: "RAMA-721")
       token_balance = build(:token_balance, value: 1)
 
       assert HolderView.format_token_balance_value(token_balance.value, token) == 1
